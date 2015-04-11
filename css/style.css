@@ -1,0 +1,78 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: slategrey;
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.wrap {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  margin: 100px auto;
+  cursor: pointer;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1000;
+          perspective: 1000;
+}
+
+.panel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: 1s ease;
+          transition: 1s ease;
+  background-size: cover;
+  border: 10px solid #dbdbdb;
+  border-radius: 10px;
+  color: white;
+  overflow: hidden;
+  box-shadow: 10px 14px 20px -2px rgba(34, 34, 34, 0.5);
+}
+.panel img {
+  display: none;
+}
+.panel .panel_content {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.panel .panel_header {
+  padding: 0 10px 5px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #222;
+  background: #dbdbdb;
+}
+.panel p {
+  line-height: 1.6;
+}
+
+.front {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+.back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.wrap:hover .front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+.wrap:hover .back {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
